@@ -43,6 +43,7 @@ int main(void)
  printf("\nThe average of the array is: %f", average);
 
 //__4rth_quest_segment
+ 
  printf("\n\n<...4th task...>");
  printf("\nPlease give me three different integers:\n ");
 
