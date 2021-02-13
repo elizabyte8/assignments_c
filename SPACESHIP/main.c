@@ -142,38 +142,40 @@ struct Spaceship *Spaceship_create (char *name, int age, int warp_speed, int cre
   who->warp_speed = warp_speed;
   who->crew = crew;
 
- return who;
+return who;
 }
 
-void Spaceship_destroy (struct Spaceship *who)
+
+void Spaceship_destroy (struct Spaceship *who)// START of func
 {
   assert(who != NULL);
 
   free(who->name);
   free(who);
-}
+}// END of func
 
-void Spaceship_print (struct Spaceship *who)
+
+void Spaceship_print (struct Spaceship *who)// START of func
 {
   printf ("Name: %s\n", who->name);
   printf ("\tAge: %d\n", who->age);
   printf ("\tWarp Speed: %d\n", who->warp_speed);
   printf ("\tCrew: %d\n", who->crew);
-}
+}// END of func
 
-// START OF A NEW FUNCTION-------------------------------------------------------------------------------------
 
+// START of func
 void Function_Sorting_Crew (struct Spaceship *star_trek_parameter, struct Spaceship *pegasos_parameter,struct Spaceship *space_dog_parameter, struct Spaceship *star_fighter_parameter)
 { 
 // Let's create a function which sorts crew's number in an ascending order
 
-  static struct Spaceship *Spaceships[4]; // let's create a list/an array of structs for sorting
+  static struct Spaceship *Spaceships[4];// let's create a list/an array of structs for sorting
   Spaceships[0] = star_trek_parameter;
   Spaceships[1] = pegasos_parameter;
   Spaceships[2] = space_dog_parameter;
   Spaceships[3] = star_fighter_parameter;
 
-  struct Spaceship *temp; // temporary var for bubble sorting method in for loop
+  struct Spaceship *temp;// temporary var for bubble sorting method in for loop
 
 // first time sorting to find out the smallest and the biggest value of crews (required by the task)
   for(int i = 0; i < 4; i++)
@@ -187,10 +189,10 @@ void Function_Sorting_Crew (struct Spaceship *star_trek_parameter, struct Spaces
          Spaceships[j] = temp;
       }
     }
-   } // end of first sorting
+   }// end of first sorting
 
-  int number = ((Spaceships[3]->crew)/(2)); // we will need that var to realize the required mathematical operation (half number of the biggest crew add to the smallest)
-  Spaceships[0]->crew += number; // the required mathematical operation is done
+  int number = ((Spaceships[3]->crew)/(2));// we will need that var to realize the required mathematical operation (half number of the biggest crew add to the smallest)
+  Spaceships[0]->crew += number;// the required mathematical operation is done
 // now let's sort the list of the structs again to print them in a new ascending order of new crew's number
   for (int i = 0; i < 4; i++)
   {
@@ -202,24 +204,21 @@ void Function_Sorting_Crew (struct Spaceship *star_trek_parameter, struct Spaces
             Spaceships[i] = Spaceships[j];
             Spaceships[j] = temp;
         }
-    } 
-Spaceship_print (Spaceships[i]); // called the function which prints all structs
+    }
+Spaceship_print (Spaceships[i]);// called the function which prints all structs
   }
-}
-// END OF THE FUNCTION--------------------------------------------------------------------------------------------
+}// END of func
 
-// START OF A NEW FUNCTION-------------------------------------------------------------------------------------
 
-void Srand_Warp_Speed (struct Spaceship *spaceship)
+void Srand_Warp_Speed (struct Spaceship *spaceship)// START of func
 {
 // let's create a random warp speed for all spaceships
   int Srand_Number = rand()%8+1;
   spaceship->warp_speed = Srand_Number;
-}
-// END OF THE FUNCTION--------------------------------------------------------------------------------------------
+}// END of func
 
-// START OF A NEW FUNCTION-------------------------------------------------------------------------------------
 
+// START of func
 void Function_Sorting_Random_Value_Of_Warp_Speeds (struct Spaceship *star_trek_parameter, struct Spaceship *pegasos_parameter, struct Spaceship *space_dog_parameter, struct Spaceship *star_fighter_parameter)
 { 
 // let's create a function which will sort the structs by their new random warp speed
@@ -229,7 +228,7 @@ void Function_Sorting_Random_Value_Of_Warp_Speeds (struct Spaceship *star_trek_p
   Spaceships[2] = space_dog_parameter;
   Spaceships[3] = star_fighter_parameter;
 
-struct Spaceship *temp; // temp var for bubble sorting method
+struct Spaceship *temp;// temp var for bubble sorting method
   printf ("\n\n\n\n........Sorted by RANDOM changes in their warp speed........\n\n");
 
   for (int i = 0; i < 4; i++)
@@ -243,14 +242,12 @@ struct Spaceship *temp; // temp var for bubble sorting method
            Spaceships[j] = temp;
         }
     }
- Spaceship_print (Spaceships[i]); // called the function which prints all structs
- }
-} 
-// END OF THE FUNCTION-------------------------------------------------------------------------------------------
+ Spaceship_print (Spaceships[i]);// called the function which prints all structs
+  } 
+}// END of MAIN
 
-// START OF A NEW FUNCTION-------------------------------------------------------------------------------------
 
-void New_Name_for_Space_Dog (struct Spaceship *space_dog_parameter)
+void New_Name_for_Space_Dog (struct Spaceship *space_dog_parameter)// START of func
 {
   char new_name[50];
 
@@ -258,12 +255,10 @@ void New_Name_for_Space_Dog (struct Spaceship *space_dog_parameter)
   scanf ("%s",new_name);
  space_dog_parameter->name = strdup(new_name);
 
-}
-// END OF THE FUNCTION-------------------------------------------------------------------------------------------
+}// END of func
 
 
-// START OF A NEW FUNCTION-------------------------------------------------------------------------------------
-
+// START of func
 void Print_The_Youngest_Spaceship_and_Delete_the_Oldest (struct Spaceship *space_dog_parameter, struct Spaceship *star_fighter_parameter)
 {
   if (space_dog_parameter->age > star_fighter_parameter->age)
@@ -277,14 +272,10 @@ void Print_The_Youngest_Spaceship_and_Delete_the_Oldest (struct Spaceship *space
     Spaceship_print (space_dog_parameter);
     printf ("...and the Star Fighter is destroyed from memory... RIP.");
    }
-
-}
-// END OF THE FUNCTION-------------------------------------------------------------------------------------------
+}// END of func
 
 
-// MAIN FUNCTION-----------------------------------------------------------------------------------------------------
-
-int main()
+int main()// START of func
 { 
 // φτιάξε 2 διαστημόπλοια
   struct Spaceship *star_trek = Spaceship_create("Star Trek", 32, 64, 140);
@@ -299,18 +290,14 @@ int main()
  Spaceship_print (star_trek);
  printf("\n");
 for (int i = 0; i < 29; i++)
- {
 printf ("%s\n",Star_Trek_Draw[i]);
- }
 printf ("\n\n");
 
  printf("\n[PEGASOS I] is at memory location: %p\n", pegasos);
  Spaceship_print (pegasos);
  printf ("\n");
 for (int i = 0; i < 12; i ++)
- {
-   printf ("%s\n",Pegasos_Draw[i]);
- }
+ printf ("%s\n",Pegasos_Draw[i]);
   printf ("\n\n");
 
   printf ("\n[SPACE DOG] is at memory location: %p\n", space_dog);
