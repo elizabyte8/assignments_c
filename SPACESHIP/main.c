@@ -278,10 +278,10 @@ void Print_The_Youngest_Spaceship_and_Delete_the_Oldest (struct Spaceship *space
 int main()// START of func
 { 
 // φτιάξε 2 διαστημόπλοια
-  struct Spaceship *star_trek = Spaceship_create("Star Trek", 32, 64, 140);
-  struct Spaceship *pegasos = Spaceship_create("Pegasos I", 20, 72, 180);
-  struct Spaceship *space_dog = Spaceship_create("Space Dog", 28, 22, 200);
-  struct Spaceship *star_fighter = Spaceship_create("Star Fighter", 10, 90, 35);
+ struct Spaceship *star_trek = Spaceship_create("Star Trek", 32, 64, 140);
+ struct Spaceship *pegasos = Spaceship_create("Pegasos I", 20, 72, 180);
+ struct Spaceship *space_dog = Spaceship_create("Space Dog", 28, 22, 200);
+ struct Spaceship *star_fighter = Spaceship_create("Star Fighter", 10, 90, 35);
 
 // τύπωσε τα χαρακτηριστικά τους και που.. βρίσκονται στην μνήμη του υπολογιστή!
  printf ("\n\n ---Old values are:---\n");
@@ -289,82 +289,79 @@ int main()// START of func
  printf ("[STAR TREK] is at memory location: %p\n", star_trek);
  Spaceship_print (star_trek);
  printf("\n");
-for (int i = 0; i < 29; i++)
-printf ("%s\n",Star_Trek_Draw[i]);
-printf ("\n\n");
+ for (int i = 0; i < 29; i++)
+  printf ("%s\n",Star_Trek_Draw[i]);
+ printf ("\n\n");
 
  printf("\n[PEGASOS I] is at memory location: %p\n", pegasos);
  Spaceship_print (pegasos);
  printf ("\n");
-for (int i = 0; i < 12; i ++)
- printf ("%s\n",Pegasos_Draw[i]);
-  printf ("\n\n");
+ for (int i = 0; i < 12; i ++)
+  printf ("%s\n",Pegasos_Draw[i]);
+ printf ("\n\n");
 
-  printf ("\n[SPACE DOG] is at memory location: %p\n", space_dog);
-  Spaceship_print (space_dog);
-for (int i = 0; i < 19; i ++)
- {
+ printf ("\n[SPACE DOG] is at memory location: %p\n", space_dog);
+ Spaceship_print (space_dog);
+ for (int i = 0; i < 19; i ++)
   printf ("%s\n",Space_Dog[i]);
- }
-  printf ("\n");
+ printf ("\n");
 
-  printf ("\n[STAR FIGHTER] is at memory location: %p\n", star_fighter);
-  Spaceship_print (star_fighter);
-  printf ("\n\n");
-for (int i = 0; i < 40; i ++)
- {
+ printf ("\n[STAR FIGHTER] is at memory location: %p\n", star_fighter);
+ Spaceship_print (star_fighter);
+ printf ("\n\n");
+ for (int i = 0; i < 40; i ++)
   printf ("%s\n",Star_Fighter_Draw[i]);
- }
  printf ("_______________________________________________");
 
 // άλλαξε τις τιμές των χαρακτηριστικών τους και τύπωσε πάλι.
-  star_trek->age += 20;
-  star_trek->warp_speed -= 2;
-  star_trek->crew += 40;
-  printf ("\n\n\n\n\n\n ---NEW VALUES OF TWO SPACESHIPS ARE---\n");
-  printf ("_______________________________________________\n\n");
+ star_trek->age += 20;
+ star_trek->warp_speed -= 2;
+ star_trek->crew += 40;
+ printf ("\n\n\n\n\n\n ---NEW VALUES OF TWO SPACESHIPS ARE---\n");
+ printf ("_______________________________________________\n\n");
 
 
-Spaceship_print (star_trek);
+ Spaceship_print (star_trek);
 
-  pegasos->age += 20;
-  pegasos->crew += 20;
+ pegasos->age += 20;
+ pegasos->crew += 20;
  printf ("\n\n");
-Spaceship_print (pegasos);
+ Spaceship_print (pegasos);
 
-  printf ("\nPlease enter new age for Star Trek (from 1 up to 90 !!!) : ");
+ printf ("\nPlease enter new age for Star Trek (from 1 up to 90 !!!) : ");
   scanf ("%d",&star_trek->age);
-if (star_trek->age < 1 || star_trek->age > 99)
-{ 
-  printf ("Be aware, the age must be from 1 up to 90. Please, try again: ");
-  scanf ("%d",&star_trek->age);
-}
+ if (star_trek->age < 1 || star_trek->age > 99)
+ { 
+   printf ("Be aware, the age must be from 1 up to 90. Please, try again: ");
+    scanf ("%d",&star_trek->age);
+ }
 
-  printf ("\nEnter new age for Pegasos I (from 1 up to 90 !!!): ");
+ printf ("\nEnter new age for Pegasos I (from 1 up to 90 !!!): ");
   scanf ("%d",&pegasos->age);
-if (pegasos->age < 1 || pegasos->age > 99)
-{ 
-  printf("Be aware, the age must be from 1 up to 90. Please, try again: ");
-  scanf("%d",&pegasos->age);
-}
+ if (pegasos->age < 1 || pegasos->age > 99)
+ { 
+   printf("Be aware, the age must be from 1 up to 90. Please, try again: ");
+    scanf("%d",&pegasos->age);
+ }
 
-  printf ("\nNew age of Space Dog (from 1 up to 90 !!!): ");
+ printf ("\nNew age of Space Dog (from 1 up to 90 !!!): ");
   scanf ("%d", &space_dog->age);
-if (space_dog->age < 1 || space_dog->age > 99)
-{ 
-  printf ("Be aware, the age must be from 1 up to 90. Please, try again: ");
-  scanf ("%d",&space_dog->age);
-}
+ if (space_dog->age < 1 || space_dog->age > 99)
+ { 
+   printf ("Be aware, the age must be from 1 up to 90. Please, try again: ");
+    scanf ("%d",&space_dog->age);
+ }
 
-  printf ("\nNew age of Star Fighter (from 1 up to 90 !!!): ");
+ printf ("\nNew age of Star Fighter (from 1 up to 90 !!!): ");
   scanf ("%d",&star_fighter->age);
-if (star_fighter->age < 1 || star_fighter->age > 99)
-{ 
-  printf ("Be aware, the age must be from 1 up to 90. Please, try again: ");
-  scanf ("%d",&star_fighter->age);
-}
+ if (star_fighter->age < 1 || star_fighter->age > 99)
+ { 
+   printf ("Be aware, the age must be from 1 up to 90. Please, try again: ");
+    scanf ("%d",&star_fighter->age);
+ }
 
-//START OF 1st TASK---------------------------------------------------------------------------------------------------
+//__1st_quest_segment
+  
 // Let's create a list/array of structures
  struct Spaceship *Spaceship_Array[4];
  Spaceship_Array[0]=star_trek;
@@ -389,41 +386,38 @@ for(int i = 0; i < 4; i++)
 } 
  Spaceship_print (Spaceship_Array[i]);
 }
-// END OF 1st TASK-----------------------------------------------------------------------------------------------------
 
-//START OF 2nd TASK--------------------------------------------------------------------------------------------------
+//__2nd_quest_segment
+  
 // The Function "Function_Sorting_Crew" has sorted structs by their crew value, ALSO made required mathematical operation and called to print sorted list of structs by their new crew value-----------------------------------------------------------------------------------------------------------------
   printf ("\n\n\n\n........Sorted by changes in their crew........\n\n");
   Function_Sorting_Crew (star_trek,pegasos,space_dog,star_fighter);
-// END OF 2nd TASK----------------------------------------------------------------------------------------------------
 
-//START OF 3rd TASK--------------------------------------------------------------------------------------------------
+//__3rd_quest_segment
+  
 // Changes in warp_speed (adding random number of speed) 
   Srand_Warp_Speed (star_trek);
   Srand_Warp_Speed (pegasos);
   Srand_Warp_Speed (space_dog);
   Srand_Warp_Speed (star_fighter);
-// END OF 3rd TASK----------------------------------------------------------------------------------------------------
 
-//START OF 4rth TASK-------------------------------------------------------------------------------------------------
+//__4rth_quest_segment
+  
 // lets' call the function to sort and print the structs by their new random warp speeds
   Function_Sorting_Random_Value_Of_Warp_Speeds (star_trek,     pegasos,space_dog,star_fighter);
-// END OF 4rth TASK---------------------------------------------------------------------------------------------------
 
-//START OF 5th TASK--------------------------------------------------------------------------------------------------
+//__5th_quest_segment
 // let's call the functions which ask a user to give a new name to the Space Dog and print it here
   New_Name_for_Space_Dog (space_dog);
   Spaceship_print (space_dog);
-// END OF 5th TASK----------------------------------------------------------------------------------------------------
 
-//START OF 6th TASK--------------------------------------------------------------------------------------------------
+//__6th_qust_segment
 // κατέστρεψε τα από την μνήμη και τα δύο
   Spaceship_destroy (star_trek);
   Spaceship_destroy (pegasos);
 // let's print the remained and the youngest spaceship + delete all others from memory 
  printf ("The remained and the youngest spaceship which managed to survive is:\n\n");
  Print_The_Youngest_Spaceship_and_Delete_the_Oldest (space_dog,star_fighter);
-// END OF 6th TASK----------------------------------------------------------------------------------------------------
 
 return 0;
-}
+}// END of MAIN
