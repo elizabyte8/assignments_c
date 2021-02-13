@@ -16,7 +16,7 @@ char *Star_Trek_Draw[50] =
 "    |     |",
 "    |     |",
 "    |STAR |",
-"    | TREK|",
+"    | TREK|", 
 "    |     |",
 "    |     |",
 "    |     |",
