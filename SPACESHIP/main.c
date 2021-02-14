@@ -407,11 +407,13 @@ for(int i = 0; i < 4; i++)
   Function_Sorting_Random_Value_Of_Warp_Speeds (star_trek,     pegasos,space_dog,star_fighter);
 
 //__5th_quest_segment
+  
 // let's call the functions which ask a user to give a new name to the Space Dog and print it here
   New_Name_for_Space_Dog (space_dog);
   Spaceship_print (space_dog);
 
 //__6th_qust_segment
+  
 // κατέστρεψε τα από την μνήμη και τα δύο
   Spaceship_destroy (star_trek);
   Spaceship_destroy (pegasos);
